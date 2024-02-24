@@ -261,7 +261,7 @@ const progress = (() => {
         loaded += 1;
 
         bar.style.width = Math.min((loaded / total) * 100, 100).toString() + "%";
-        info.innerText = `Loading Wedding Invitation (${loaded}/${total}) [${parseInt(bar.style.width).toFixed(0)}%]`;
+        info.innerText = `Loading your Invitation (${loaded}/${total}) [${parseInt(bar.style.width).toFixed(0)}%]`;
 
         if (loaded == total) {
             util.show();
@@ -583,7 +583,7 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                alert(`There is an error: ${err}`);
             });
 
         if (isSuccess) {
@@ -647,7 +647,7 @@ const comment = (() => {
             })
             .catch((err) => {
                 resetForm();
-                alert(`Terdapat kesalahan: ${err}`);
+                alert(`There is an error: ${err}`);
             });
 
         document.getElementById('ucapan').scrollIntoView({ behavior: 'smooth' });
