@@ -476,7 +476,7 @@ const like = (() => {
                 });
         }
 
-        info.innerText = info.getAttribute('data-suka') + ' suka';
+        info.innerText = info.getAttribute('data-suka') + ' like';
         button.disabled = false;
     };
 
@@ -610,7 +610,7 @@ const comment = (() => {
         let token = localStorage.getItem('token') ?? '';
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, the token is empty !');
             window.location.reload();
             return;
         }
@@ -631,7 +631,7 @@ const comment = (() => {
 
                     document.getElementById('balasan').innerHTML = `
                     <div class="my-3">
-                        <h6>Balasan</h6>
+                        <h6>Reply</h6>
                         <div id="id-balasan" data-uuid="${id}" class="card-body bg-light shadow p-3 rounded-4">
                             <div class="d-flex flex-wrap justify-content-between align-items-center">
                                 <p class="text-dark text-truncate m-0 p-0" style="font-size: 0.95rem;">
@@ -659,16 +659,16 @@ const comment = (() => {
         return `
         <div class="d-flex flex-wrap justify-content-between align-items-center">
             <div class="d-flex flex-wrap justify-content-start align-items-center">
-                <button style="font-size: 0.8rem;" onclick="comment.balasan(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0">Balas</button>
+                <button style="font-size: 0.8rem;" onclick="comment.balasan(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0">Reply</button>
                 ${owns.has(data.uuid)
                 ? `
-                <button style="font-size: 0.8rem;" onclick="comment.edit(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0 ms-1">Ubah</button>
-                <button style="font-size: 0.8rem;" onclick="comment.hapus(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0 ms-1">Hapus</button>`
+                <button style="font-size: 0.8rem;" onclick="comment.edit(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0 ms-1">Modify</button>
+                <button style="font-size: 0.8rem;" onclick="comment.hapus(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-3 py-0 ms-1">Happy</button>`
                 : ''}
             </div>
             <button style="font-size: 0.8rem;" onclick="like.like(this)" data-uuid="${data.uuid}" class="btn btn-sm btn-outline-dark rounded-2 py-0 px-0">
                 <div class="d-flex justify-content-start align-items-center">
-                    <p class="my-0 mx-1" data-suka="${data.like.love}">${data.like.love} suka</p>
+                    <p class="my-0 mx-1" data-suka="${data.like.love}">${data.like.love} Like</p>
                     <i class="py-1 me-1 p-0 ${likes.has(data.uuid) ? 'fa-solid fa-heart text-danger' : 'fa-regular fa-heart'}"></i>
                 </div>
             </button>
@@ -721,7 +721,7 @@ const comment = (() => {
 
         let token = localStorage.getItem('token') ?? '';
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, the token is empty !');
             window.location.reload();
             return;
         }
@@ -773,23 +773,23 @@ const comment = (() => {
         let id = document.getElementById('id-balasan').getAttribute('data-uuid');
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, the token is empty !');
             window.location.reload();
             return;
         }
 
         if (nama.length == 0) {
-            alert('nama tidak boleh kosong');
+            alert('Name cannot be empty');
             return;
         }
 
         if (nama.length >= 35) {
-            alert('panjangan nama maksimal 35');
+            alert('Maximum name length is 35');
             return;
         }
 
         if (komentar.length == 0) {
-            alert('pesan tidak boleh kosong');
+            alert('Message cannot be empty');
             return;
         }
 
@@ -839,18 +839,18 @@ const comment = (() => {
         let komentar = formPesan.value;
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, token is empty !');
             window.location.reload();
             return;
         }
 
         if (document.getElementById(id).getAttribute('data-parent') === 'true' && hadir == 0) {
-            alert('silahkan pilih kehadiran');
+            alert('Please select attendance');
             return;
         }
 
         if (komentar.length == 0) {
-            alert('pesan tidak boleh kosong');
+            alert('Message cannot be empty');
             return;
         }
 
@@ -875,7 +875,7 @@ const comment = (() => {
                 }
             })
             .catch((err) => {
-                alert(`Terdapat kesalahan: ${err}`);
+                alert(`There is an error: ${err}`);
             });
 
         if (isSuccess) {
@@ -892,7 +892,7 @@ const comment = (() => {
     };
 
     const hapus = async (button) => {
-        if (!confirm('Kamu yakin ingin menghapus?')) {
+        if (!confirm('Are you sure you want to delete?')) {
             return;
         }
 
@@ -900,7 +900,7 @@ const comment = (() => {
         let id = button.getAttribute('data-uuid');
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, the token is empty !');
             window.location.reload();
             return;
         }
@@ -938,7 +938,7 @@ const comment = (() => {
         let token = localStorage.getItem('token') ?? '';
 
         if (token.length == 0) {
-            alert('Terdapat kesalahan, token kosong !');
+            alert('There was an error, the token is empty !');
             window.location.reload();
             return;
         }
