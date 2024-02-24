@@ -23,6 +23,11 @@ body::-webkit-scrollbar {
     color: #800000 !important;
 }
 
+.font-sanskrit {
+    font-family: 'Noto Sans Devanagari', serif !important;
+    color: #800000 !important;
+}
+
 .img-crop {
     width: 14rem;
     height: 14rem;
